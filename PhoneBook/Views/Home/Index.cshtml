@@ -1,0 +1,52 @@
+﻿@model List<PhoneRecord>
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+
+<h1>PhoneBook App</h1>
+
+<button onclick="getPhoneBook()">Get All PhoneRecords</button>
+
+<table id="phoneBookTable">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>PhoneNumber</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var phoneRecord in Model)
+        {
+            <tr>
+                <td>@phoneRecord.Id</td>
+                <td>@phoneRecord.Name</td>
+                <td>@phoneRecord.PhoneNumber</td>
+            </tr>
+        }
+    </tbody>
+</table>
+<br />
+
+
